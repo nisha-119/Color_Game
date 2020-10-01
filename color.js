@@ -43,11 +43,11 @@ for (var i = 0; i < squares.length; i++) {
     var clickedColor = this.style.backgroundColor;
     if(clickedColor === pickedColor){
       if(mode ==3 ){
-        score = 25 - (10*turns);
+        score = 50 - (15*turns);
       }
       else 
       {
-        score = 50 - (10*turns);
+        score = 100 - (15*turns);
       }
       
       result.textContent="Score :"+score;
