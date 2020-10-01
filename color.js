@@ -42,15 +42,25 @@ for (var i = 0; i < squares.length; i++) {
   squares[i].addEventListener("click", function(){
     var clickedColor = this.style.backgroundColor;
     if(clickedColor === pickedColor){
+      var win = false;
       if(mode ==3 ){
         score = 50 - (15*turns);
+        if(score > 30) win =  true;
       }
       else 
       {
         score = 100 - (15*turns);
+        if(score > 70) win = true;
       }
       
-      result.textContent="Score :"+score;
+      if(win)
+      {
+        result.textContent="CONGO!! You won : Score :"+score;
+      }
+      else{
+        result.textContent="SORRY :( You lost : Score :"+score;
+      }
+      
       
       correctAnswer(clickedColor);
       newGame.textContent = "Play Again";
